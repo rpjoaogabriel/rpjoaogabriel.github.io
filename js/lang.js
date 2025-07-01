@@ -1,5 +1,6 @@
 const translations = {
   en: {
+    language_prompt: "Choose your preferred language:",
     title: "rpjoaogabriel Website",
     welcome: "Welcome :D",
     intro: "This is still a working in progress page!!! Have mercy and fun reading a bit about lil old me :3",
@@ -27,6 +28,7 @@ const translations = {
   },
 
   pt: {
+    language_prompt:"Escolha seu idioma preferido",
     title: "Site do rpjoaogabriel",
     welcome: "Bem-vindo :D",
     intro: "Esta ainda é uma página em construção!!! Tenha misericórdia e divirta-se lendo um pouco sobre este velho eu :3",
@@ -54,6 +56,7 @@ const translations = {
   },
 
   es: {
+    language_prompt: "Elige tu idioma preferido:",
     title: "Sitio Web rpjoaogabriel",
     welcome: "¡Bienvenido :D!",
     intro: "¡Esta página aún está en construcción! Ten piedad y diviértete leyendo un poco sobre este viejo yo :3",
@@ -78,7 +81,35 @@ const translations = {
 
     contact_title: "📬 Contacto:",
     contact_text: "No dudes en contactarme para consultas profesionales, oportunidades de colaboración o debates sobre tecnología, filosofía y pensamiento crítico."
-  }
+  },
+  de: = {
+  language_prompt: "Wähle deine bevorzugte Sprache:",
+  title: "rpjoaogabriel Webseite",
+  welcome: "Willkommen :D",
+  intro: "Diese Seite ist noch in Arbeit!!! Hab Nachsicht und viel Spaß beim Lesen über den kleinen alten mich :3",
+
+  about_me_title: "🔍 Über Mich:",
+  about_me_text: "Ich bin ein Computeringenieur, der derzeit sein Fachwissen auf die Wirtschaftswissenschaften ausweitet. Bekannt für mein ruhiges Wesen, meine Organisation und Verantwortungsbewusstsein, strebe ich danach, technisches Können mit philosophischer Einsicht zu verbinden. Mein Ansatz ist durch Gründlichkeit und Nachdenklichkeit geprägt – sowohl in der Technik als auch im persönlichen Wachstum.",
+
+  reflective_title: "🧠 Reflexiver Ansatz:",
+  reflective_text: "Ruhe und Organisation sind das Fundament meines beruflichen und persönlichen Lebens. Meine Leidenschaft für östliche Philosophie, insbesondere das Tao Te Ching und die Analekten von Konfuzius, hat eine analytische und gelassene Sichtweise gefördert, die mein Problemlösungsverhalten und Streben nach Ausgewogenheit leitet.",
+
+  gaming_title: "🎮 Erfahrung in der Spieleindustrie:",
+  gaming_text_1: "Aufschlussreiche Perspektive: Mit über 10 Jahren als begeisterter Gamer habe ich ein tiefes Verständnis für Branchentrends und technologische Entwicklungen.",
+  gaming_text_2: "Innovationsbegeistert: Meine umfassende Erfahrung im Gaming-Bereich hat meine technischen und analytischen Perspektiven bereichert und mich an der Spitze der Marktentwicklung gehalten.",
+
+  comp_eng_title: "💻 Fachkenntnisse in Computertechnik:",
+  comp_eng_prog: "Programmierung: Versiert in C, C++, Python und Java, angewendet in verschiedenen akademischen und privaten Projekten.",
+  comp_eng_web: "Webentwicklung: Kompetent in HTML, CSS und Front-End-Entwicklung mit praktischer Erfahrung in Frameworks wie Django.",
+  comp_eng_sys: "Systemdesign: Grundkenntnisse in Systemarchitektur, erworben durch mein Studium der Computertechnik.",
+
+  reader_title: "📚 Leidenschaftlicher Leser und lebenslanger Lerner:",
+  reader_text: "Ich erkunde gerne eine Vielzahl von Themen, mit besonderem Interesse an östlicher Philosophie. Dem lebenslangen Lernen verpflichtet, suche ich aktiv nach neuen akademischen und beruflichen Herausforderungen, um mein Wissen anzuwenden und zu erweitern.",
+
+  contact_title: "📬 Kontakt:",
+  contact_text: "Zögern Sie nicht, sich bei beruflichen Anfragen, Kooperationsmöglichkeiten oder Gesprächen über Technologie, Philosophie und kritisches Denken zu melden."
+}
+
 };
 
 function setLanguage(lang) {
