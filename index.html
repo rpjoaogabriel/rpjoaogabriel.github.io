@@ -6,24 +6,18 @@
     <title>João Gabriel Rangel Pedroso</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="js/lang.js"></script>
-    <style>
-    .flag {
-      cursor: pointer;
-      width: 32px;
-      margin: 0 5px;
-    }
-    .section {
-      margin-top: 1em;
-    }
-    </style>
 </head>
 <body>
 
-	<div>
-    		<img src="https://flagcdn.com/w40/gb.png" class="flag" onclick="setLanguage('en')" alt="English">
-    		<img src="https://flagcdn.com/w40/br.png" class="flag" onclick="setLanguage('pt')" alt="Português">
-    		<img src="https://flagcdn.com/w40/es.png" class="flag" onclick="setLanguage('es')" alt="Español">
-  	</div>
+<div id="language-selector">
+  <p data-i18n="language_prompt">Choose your preferred language:</p>
+  <div class="flags">
+    <img src="https://flagcdn.com/w80/gb.png" class="flag" onclick="setLanguage('en')" alt="English">
+    <img src="https://flagcdn.com/w80/br.png" class="flag" onclick="setLanguage('pt')" alt="Português">
+    <img src="https://flagcdn.com/w80/es.png" class="flag" onclick="setLanguage('es')" alt="Español">
+    <img src="https://flagcdn.com/w80/de.png" class="flag" onclick="setLanguage('de')" alt="Deutsch">
+  </div>
+</div>
 
  <h1 data-i18n="welcome">Welcome :D</h1>
   <p data-i18n="intro">This is still a working in progress page!!! Have mercy and fun reading a bit about lil old me :3</p>
