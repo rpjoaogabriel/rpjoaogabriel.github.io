@@ -1,12 +1,236 @@
 /* css/style.css */
+/* === Main theme: LEDGER + TERMINAL MIX=== */
+:root {
+    --bg: #f4efe0;                /* Old paper */
+    --text: #1a2b3c;              /* Blue ink*/
+    --card-bg: #fefdf7;
+    --border: #bfae8b;            /* Ledger line*/
+    --accent: #8b1a1a;            /* Red ink*/
+    --shadow: 0 2px 10px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03);
+    --btn-bg: #1a2b3c;
+    --btn-text: #f4efe0;
+    --font-mono: 'Courier New', 'Consolas', 'Monaco', monospace;
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --line-color: rgba(0, 40, 70, 0.08); /* linhas pautadas */
+}
+
+/* ===== MATRIX 1999 THEME (class active) ===== */
+body.matrix-theme {
+    --bg: #0a0a0a;
+    --text: #00ff41;
+    --card-bg: #0d0d0d;
+    --border: #00ff4133;
+    --accent: #00ff41;
+    --shadow: 0 0 20px rgba(0, 255, 65, 0.15), 0 0 40px rgba(0, 255, 65, 0.05);
+    --btn-bg: #00ff41;
+    --btn-text: #0a0a0a;
+    --font-mono: 'Courier New', 'Consolas', 'Monaco', monospace;
+    --font-serif: 'Courier New', monospace; /* monospace for titles too */
+    --line-color: rgba(0, 255, 65, 0.05);
+}
+
+/* ========== Global drip ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.4s ease, color 0.4s ease,
+        border-color 0.4s ease, box-shadow 0.4s ease;
+}
 
 body {
-  font-family: sans-serif;
-  margin: 20px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
+    font-family: var(--font-mono);
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
+
+    /* Ledger paper - only default theme */
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 24px,
+        var(--line-color) 24px,
+        var(--line-color) 25px
+    );
+}
+
+/* Matrix theme removes the lines and adds digital rain hehe */
+body.matrix-theme {
+    background-image: none;
+}
+
+/* Digital rain (Matrix theme only) */
+#rainCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+body.matrix-theme #rainCanvas {
+    opacity: 0.15;
+}
+
+/* Container duh*/
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 750px;
+    width: 100%;
+}
+
+/* Ledger Card */
+.card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 4px;           /* cantos vivos, como formulário */
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    position: relative;
+
+    /* Dupla borda estilo ledger */
+    outline: 1px solid var(--border);
+    outline-offset: 3px;
+}
+
+/* Decorative flair */
+.card::before {
+    content: "REGISTRO #0001";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: var(--card-bg);
+    padding: 0 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    opacity: 0.7;
+}
+body.matrix-theme .card::before {
+    content: "MATRIX://NEO";
+    color: #00ff41;
+    border-color: #00ff41;
+    opacity: 0.8;
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+body.matrix-theme h1 {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-bottom: 2px solid #00ff41;
+    text-shadow: 0 0 10px #00ff41, 0 0 30px #00ff4188, 0 0 60px #00ff4144;
+    animation: textFlicker 3s infinite alternate;
+}
+
+@keyframes textFlicker {
+    0%, 100% { text-shadow: 0 0 10px #00ff41, 0 0 30px #00ff4188; }
+    50%      { text-shadow: 0 0 20px #00ff41, 0 0 50px #00ff41aa, 0 0 80px #00ff4166; }
+    85%      { text-shadow: 0 0 8px #00ff41, 0 0 25px #00ff4177; }
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+}
+
+.sub-text {
+    font-style: italic;
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--text);
+    opacity: 0.85;
+}
+body.matrix-theme .sub-text {
+    border-left-color: #00ff41;
+}
+
+/* Theme button*/
+.theme-toggle-btn {
+    display: inline-block;
+    padding: 0.8rem 2.2rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid var(--border);
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-family: var(--font-mono);
+    box-shadow: var(--shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+.theme-toggle-btn:hover {
+    background-color: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-1px);
+}
+body.matrix-theme .theme-toggle-btn {
+    border-color: #00ff41;
+    animation: btnGlow 2s infinite ease-in-out;
+    letter-spacing: 3px;
+    background-color: #00ff41;
+    color: #0a0a0a;
+}
+body.matrix-theme .theme-toggle-btn:hover {
+    background-color: #0a0a0a;
+    color: #00ff41;
+    border-color: #00ff41;
+}
+
+@keyframes btnGlow {
+    0%, 100% { box-shadow: 0 0 10px #00ff41, 0 0 25px #00ff4177; }
+    50%      { box-shadow: 0 0 25px #00ff41, 0 0 50px #00ff4199, 0 0 75px #00ff4144; }
+}
+
+.status-text {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    opacity: 0.7;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+@media (max-width: 500px) {
+    body { padding: 1rem; }
+    .card { padding: 2rem 1rem; }
+    h1 { font-size: 1.8rem; }
 }
 
 .flag {
