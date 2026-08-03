@@ -75,7 +75,7 @@
             subtext: '<strong>Último lançamento:</strong><br>&gt; débito  conhecimento_web  1500,00<br>&gt; crédito design_retro       750,50<br>&gt; saldo parcial: <span style="color: var(--accent);">+ 749,50</span>',
             instruction: 'Para acessar o modo visual alternativo (Matrix 1999), utilize o botão abaixo ou pressione a tecla <kbd>M</kbd>.',
             btnText: '▶ MATRIX',
-            statusText: 'SISTEMA: LEDGER/TERMINAL ATIVO'
+            statusText: 'Ledger Style'
         };
 
         const contentMatrix = {
@@ -84,7 +84,7 @@
             subtext: '<em>"Siga o coelho branco... 🐇"</em><br>Knock, knock, Neo.',
             instruction: 'Retorne ao tema de ledger/terminal usando o botão ou a tecla <kbd>M</kbd>.',
             btnText: '◀ LEDGER',
-            statusText: 'SISTEMA: MATRIX 1999 ATIVO'
+            statusText: 'MATRIX Mode'
         };
 
         // ---- Função de troca ----
