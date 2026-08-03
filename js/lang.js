@@ -82,7 +82,7 @@ const translations = {
     contact_title: "📬 Contacto:",
     contact_text: "No dudes en contactarme para consultas profesionales, oportunidades de colaboración o debates sobre tecnología, filosofía y pensamiento crítico."
   },
-  de: = {
+  de:  {
   language_prompt: "Wähle deine bevorzugte Sprache:",
   title: "rpjoaogabriel Webseite",
   welcome: "Willkommen :D",
