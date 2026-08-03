@@ -1,4 +1,4 @@
-  function() {
+  (function() {
         const body = document.body;
         const toggleBtn = document.getElementById('themeToggleBtn');
         const statusText = document.getElementById('statusText');
